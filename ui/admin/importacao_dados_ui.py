@@ -2,14 +2,19 @@ import tkinter as tk
 from tkinter import messagebox
 from utils import importar_dados
 
+
 def tela_importacao_dados():
     def importar():
         url = url_entry.get()
-        if url:
+        if not url:
+            messagebox.showerror("Erro", "A URL não pode estar vazia!")
+            return
+
+        try:
             importar_dados(url)
-            messagebox.showinfo("Importação", "Dados importados com sucesso!")
-        else:
-            messagebox.showerror("Erro", "URL não pode estar vazia.")
+            messagebox.showinfo("Sucesso", "Dados importados com sucesso!")
+        except Exception as e:
+            messagebox.showerror("Erro", f"Erro ao importar dados: {e}")
 
     root = tk.Toplevel()
     root.title("Importação de Dados")

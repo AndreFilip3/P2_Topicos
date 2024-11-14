@@ -9,8 +9,9 @@ def tela_menu(usuario):
 
     tk.Label(root, text=f"Bem-vindo(a), {usuario['email']}!", font=("Arial", 16)).pack(pady=20)
 
-    tk.Button(root, text="Carrinho", command=tela_carrinho).pack(pady=10)
+    # Botões para funcionalidades do usuário comum
     tk.Button(root, text="Sobre", command=tela_sobre).pack(pady=10)
+    tk.Button(root, text="Carrinho", command=tela_carrinho).pack(pady=10)
     tk.Button(root, text="Sair", command=root.destroy).pack(pady=10)
 
     root.mainloop()
