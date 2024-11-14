@@ -1,10 +1,12 @@
-# main.py
-from database import inicializar_bd
 from ui.login_ui import tela_login
+from database import inicializar_bd
 
 def main():
-    inicializar_bd()  # Inicializa as tabelas do banco de dados
-    tela_login()  # Abre a interface de login
+    # Inicializar banco de dados
+    inicializar_bd()
+
+    # Abrir tela de login
+    tela_login()
 
 if __name__ == "__main__":
     main()
